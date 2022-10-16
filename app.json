@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "calculadora-de-valores",
-    "slug": "calculadora-de-valores",
-    "version": "1.0.0",
+    "name": "Calculadora de valores",
+    "slug": "Calculadora de valores",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
