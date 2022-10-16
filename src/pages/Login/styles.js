@@ -4,10 +4,10 @@ export const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flex: 1,
-        marginVertical: 80,
+        paddingVertical: 80,
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '##e0e0e0'
+        backgroundColor: '#e0e0e0'
     },
 
     image: {
