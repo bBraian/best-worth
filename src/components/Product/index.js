@@ -20,7 +20,7 @@ export function Product({title, setTitle, weight, setWeight, selectInput, setSel
                     placeholder="Peso" 
                     style={styles.weightInput}
                     value={weight}
-                    onChange={(text) => setWeight(text)}
+                    onChangeText={(text) => setWeight(text)}
                 />
                 <View style={styles.unityInput}>
                     <Picker
@@ -43,7 +43,7 @@ export function Product({title, setTitle, weight, setWeight, selectInput, setSel
                     placeholder="Valor" 
                     style={styles.priceInput}
                     value={price}
-                    onChange={(text) => setPrice(text)}
+                    onChangeText={(text) => setPrice(text)}
                 />
             </View>
         </KeyboardAvoidingView>

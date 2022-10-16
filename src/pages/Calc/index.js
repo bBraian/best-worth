@@ -1,23 +1,30 @@
 import { styles } from "./styles";
 import { Product } from "../../components/Product";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { useState } from "react";
+import { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { ProductsContext } from "../../context/ProductsContext";
 
 export function Calc() {
-    const [name1, setName1] = useState("");
-    const [name2, setName2] = useState("");
-    const [weight1, setWeight1] = useState(0);
-    const [weight2, setWeight2] = useState(0);
-    const [selectInput1, setSelectInput1] = useState("");
-    const [selectInput2, setSelectInput2] = useState("");
-    const [price1, SetPrice1] = useState(0);
-    const [price2, SetPrice2] = useState(0);
+    const { 
+        name1, setName1, 
+        name2, setName2, 
+        weight1, setWeight1, 
+        weight2, setWeight2, 
+        selectInput1, setSelectInput1, 
+        selectInput2, setSelectInput2, 
+        price1, setPrice1,
+        price2, setPrice2,
+        calculate, validateFields
+    } = useContext(ProductsContext);
 
     const navigation = useNavigation();
 
     function handleCalculate() {
-        navigation.navigate('result', {name1})
+        if(validateFields()) {
+            calculate()
+            navigation.navigate('result')
+        }
     }
 
     return (
@@ -32,7 +39,7 @@ export function Calc() {
                     selectInput={selectInput1}
                     setSelectInput={setSelectInput1}
                     price={price1}
-                    setPrice={SetPrice1}
+                    setPrice={setPrice1}
                     index="1"
                 />
                 <Product 
@@ -44,7 +51,7 @@ export function Calc() {
                     selectInput={selectInput2}
                     setSelectInput={setSelectInput2}
                     price={price2}
-                    setPrice={SetPrice2}
+                    setPrice={setPrice2}
                     index="2"
                     />
             </View>

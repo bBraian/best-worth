@@ -9,6 +9,7 @@ import {
   Rajdhani_500Medium,
   Rajdhani_700Bold
 } from '@expo-google-fonts/rajdhani';
+import { ProductsContextProvider } from './src/context/ProductsContext';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,7 +26,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent={true} 
       />
-      {fontsLoaded ? <Router /> : ""}
+      <ProductsContextProvider>
+        {fontsLoaded ? <Router /> : ""}
+      </ProductsContextProvider>
     </NavigationContainer>
   );
 }
